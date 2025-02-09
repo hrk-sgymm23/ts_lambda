@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "LambdaExec",
+            "Effect": "Allow",
+            "Action": [
+                "logs:*",
+                "ec2:*",
+                "lambda:*",
+                "ssm:*",
+                "kms:*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

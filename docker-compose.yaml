@@ -1,0 +1,17 @@
+services:
+  lambda-local:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      LAMBDA_TASK_ROOT: /var/task
+    command: [ "index.handler" ]
+    restart: always
+    volumes:
+      - ./src/dist:/var/task/
+    ports:
+      - "9000:8080"
+    logging:
+      options:
+        max-size: "5m"
+        max-file: "10"
